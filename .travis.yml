@@ -1,15 +1,24 @@
+sudo: required
 language: node_js
-
-os:
-  - linux
-  - osx
-
 node_js:
-  - "node"
-  - "lts/*"
-  - "7"
-  - "8"
-
-script:
-  - npm install
-  - npm run lint
+  - '8'
+cache: yarn
+branches:
+  only:
+  - master
+git:
+  depth: false
+install:
+  - yarn install
+  - sudo pip install awscli
+before_script:
+  - yarn global add gatsby-cli
+before_deploy:
+  - echo 'Commencing Deployment'
+  - echo 'Uploading Site to AWS S3'
+deploy:
+  provider: s3
+  skip_cleanup: true
+  bucket: arianakataoka.io
+  region: us-west-2
+  local_dir: public

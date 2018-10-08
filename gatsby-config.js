@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
-    author: 'Kyle Mathews',
-    description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
+    title: 'Ariana\'s Kataoka Blog',
+    author: 'Ariana Kataoka',
+    description: '',
+    siteUrl: 'https://arianakataoka.io',
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
@@ -48,8 +48,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: 'Ariana\'s Kataoka Blog',
+        short_name: `ArisKataoka`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
