@@ -13,6 +13,8 @@ install:
 - sudo pip install awscli
 before_script:
 - yarn global add gatsby-cli
+script:
+- gatsby build
 before_deploy:
 - echo 'Commencing Deployment'
 - echo 'Uploading Site to AWS S3'
