@@ -1,7 +1,7 @@
 sudo: required
 language: node_js
 node_js:
-  - '8'
+- '8'
 cache: yarn
 branches:
   only:
@@ -9,16 +9,20 @@ branches:
 git:
   depth: false
 install:
-  - yarn install
-  - sudo pip install awscli
+- yarn install
+- sudo pip install awscli
 before_script:
-  - yarn global add gatsby-cli
+- yarn global add gatsby-cli
 before_deploy:
-  - echo 'Commencing Deployment'
-  - echo 'Uploading Site to AWS S3'
+- echo 'Commencing Deployment'
+- echo 'Uploading Site to AWS S3'
 deploy:
   provider: s3
   skip_cleanup: true
   bucket: arianakataoka.io
   region: us-west-2
   local_dir: public
+  access_key_id:
+    secure: qo/lXE8cRt7Ui/lBerbA6gNxrOYVqBm1GaQQE0ZM3DXOVpyOrUdFoL836E0RFY9nt0vvWmQkzBBK0K8HKT7k3s3Rt6xcsuoY4v7HCaWgq4JDBxYfHd3DJHfc1J6CIwsEOWMzGwOGlf6MPYGGiPCWAv/t0tEzySQ9kuIZg0oTu9qXPljpVlCYqHxr1D0awO+VMLy00X6Hq/WbyPya0b6Uu7vIZAFB4Z+txYt/oYyF7TqUKJRbhDP9v+qSKn5ZStwqR1ulNdAYXFx6ZAzRnIV/fFiEoSVsP7uDgejEwLaNyC8Nauw+SI1hcna+ODED/xrvnyi54j3YwM/iapyhlvBRzOtRuTFijt1im2+ASNlOspUxxft4PJhkw7OkF0P4lffHb6QXqKcSOJc0u4n+y1ka9iuKddS/LngJM4aAgyxPPzF95/6xZrKOsW10XTJ8ZhmRep64xPw4orhEN3yCvuZqjtf3WXASo81LQDHLsT9k1hce6elhYwMw1SlYUV8zfh9WE18pNsLLEm5mgU3ZsPkAuE898kGgAVzNLxQbNt2NqfVo+XcdTnDrrLVzVwr34UJSiIDEFv4AXpCXoz7l9+ccyZ7RwLCZjj7W21LObFWfyaCcgEDOArDhAVmSMLNNIrIdy3urAoOvCcaJkxoqsVqFyqc8f0jaNrr+Ezvtmeq7jXQ=
+  secret_access_key:
+    secure: ZIFhR9JMeDvwW0jUWJvD3Zs7o4h3NG+SRQNKuDb0VFjbgDaGSTp2QQff/wwhFUnK92aUYb726TK2HSGChHMdfSr0QE57a2AhA699bjEt7p0bKRFg4S1NxGCw8fN16QBH/Hxufy+PDap4tld8MMMoYdhGdOSFpDc9nE+6RIE8QGP4eNHhLPtoZCzoXPcb8cuLeIUk9oP/O28EpNRp+ku0E0LF83wMgN4VCE5kVBwEkjBdwwj7TNs+qq5kKevvXc0uCKFpFD+A643WgRIan6EerJgBAx35dwz4XeolhPomyLhdFRpJDMN+E8IN7CCYrU0FVxPVWf0YzwQab8Qw1kahG+mx3xD5ewaXlWv3TJ9ZxfUr/0kKyQ72h5gWPxaLNj0IDiITR27ALIhZ26l1Kq4OUXDik/q2vfA2IVt/S6R0qANitGpEOT0Fgoi2oN319md7wrEZs/bFcgEi9eQ3zovD1H5Y43wGT3sb2SJsWyLA6c/1zs/m0KQSGQrCxcjeSR5ya1kiEJyjCyPEv8r2mUdobalAkKhi14Rlp9GiK4Youxr7SCrxOhWmMo9JoPvLYq12Pr4+YqP/BLwkNXbz3J30MJKfDz1VHZLCo0bfRcDjFLNxgQDB3HwAQU11ZshJJYEaxVtf9KRjXs45gmrGEjiqWfjS35eUt9hSw78J82Ff+8k=
