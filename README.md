@@ -10,3 +10,6 @@ Install this starter (assuming Gatsby is installed) by running from your CLI:
 
 
 ## test commit
+
+## another test commit 
+Editing this file. 
